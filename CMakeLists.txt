@@ -43,6 +43,22 @@ target_link_libraries(
     ${ALL_LIBS}
 )
 
+add_executable(test_main src/test_main.cc
+    src/GrammarPool.cpp
+    src/Items.cpp
+    src/ItemsPool.cpp
+    src/Production.cpp
+    src/ProductionPool.cpp
+    src/SymbolPool.cpp
+    src/LR1ParseTable.cpp
+    src/ParseStack.cpp
+    src/SyntaxTree.cpp
+)
+target_link_libraries(
+    test_main
+    ${ALL_LIBS}
+)
+
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -lyaml-cpp")

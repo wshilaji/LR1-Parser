@@ -59,7 +59,7 @@ void GrammarPool::loadGrammar(const string &path)
     this->lpDebug<<"Grammar name:"+config["Grammar"]["name"].as<string>();
 
     // load Start-Symbol
-    this->NPool->insert("S'");
+    this->NPool->insert("S'"); // Pool index = 0  //next symbol begin from idx 1
     this->SSymbol = config["Grammar"]["Start-Symbol"].as<string>();
 
     // load Non-Terminal-Symbols
@@ -138,6 +138,17 @@ void GrammarPool::loadGrammar(const string &path)
             }
             prod.endIndex = ProdCnt;
             this->ProdPool->insert(prod);
+
+            /*
+             * S' 0 S 1 L 2 R 3
+             * (0)S' -> S (1) S -> L=R (2) S ->R
+             * (3)L -> *R (4) L -> i (5) R ->L
+             * insert
+             * <0 [0, ( S)]>
+             * <1 , [(1, L=R ), (2, R)] , endIndex=3>
+             * <2 , [(3, R), (4, i)] ,endIndex=5>
+             * <3 , [(5, L)] , endIndex=6>
+             */
         }
         catch (SymbolNotFoundException &e)
         {
@@ -156,6 +167,7 @@ void GrammarPool::buildLR1ParseTable()
     Production sprod = this->ProdPool->find(0);
     Items Its0 = Items(sprod, this->ProdPool, -1);
     Its0.closure();
+    //Its0.showItems();
     this->ItsPool = new ItemsPool(0, Its0);
     this->ItsPool->getDFA(this->TPool, this->NPool);
     this->lr1ParseTable = new LR1ParseTable(this->ItsPool->pool.size(), this->NPool, this->TPool);

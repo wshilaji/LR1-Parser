@@ -1,0 +1,211 @@
+Table:
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 0
+          value: 4
+        - type: 0
+          value: 5
+        - type: 2
+          value: 0
+      Goto:
+        - next: -1
+        - next: 1
+        - next: 2
+        - next: 3
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 3
+          value: 0
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1
+  - State:
+      Action:
+        - type: 0
+          value: 6
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 1
+          value: 5
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 1
+          value: 2
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1
+  - State:
+      Action:
+        - type: 1
+          value: 4
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 1
+          value: 4
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 0
+          value: 4
+        - type: 0
+          value: 5
+        - type: 2
+          value: 0
+      Goto:
+        - next: -1
+        - next: -1
+        - next: 7
+        - next: 8
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 0
+          value: 11
+        - type: 0
+          value: 12
+        - type: 2
+          value: 0
+      Goto:
+        - next: -1
+        - next: -1
+        - next: 9
+        - next: 10
+  - State:
+      Action:
+        - type: 1
+          value: 5
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 1
+          value: 5
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1
+  - State:
+      Action:
+        - type: 1
+          value: 3
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 1
+          value: 3
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 1
+          value: 5
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 1
+          value: 1
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 1
+          value: 4
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 0
+          value: 11
+        - type: 0
+          value: 12
+        - type: 2
+          value: 0
+      Goto:
+        - next: -1
+        - next: -1
+        - next: 9
+        - next: 13
+  - State:
+      Action:
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 2
+          value: 0
+        - type: 1
+          value: 3
+      Goto:
+        - next: -1
+        - next: -1
+        - next: -1
+        - next: -1

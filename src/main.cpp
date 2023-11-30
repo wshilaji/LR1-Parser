@@ -3,7 +3,7 @@
 #include "GrammarPool.hpp"
 #include "ParseStack.hpp"
 #include "cmdline.h"
-
+//（ε）
 int main(int argc, char *argv[])
 {
 	cmdline::parser cmdParser;

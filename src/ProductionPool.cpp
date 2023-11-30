@@ -33,7 +33,22 @@ Production ProductionPool::find(int left)
 {
     return this->pool[left];
 }
-
+/*
+ * (1)
+ * 1 E -> TE'
+ * 2 E' -> +TE'
+ * 3 E' -> ε
+ * 4 T -> FT'
+ * 5 T' -> *FT'
+ * 6 T' -> ε
+ * 7 F -> i
+ * 8 F -> (E)
+ *
+ * (2)在1的基础上
+ * C' = {
+ * C' = ε
+ * E' = T'F'C'a
+ */
 
 const int maxn=10000;
 static int visited[maxn];
@@ -71,7 +86,7 @@ void ProductionPool::dfs_for_NSymbol_first(const int NSymbol,set<int> &firsts)
                     }
                     Symbol curSymbol=firstSymbol;
                     int next=1;
-                    while(this->pool[curSymbol.index].hasEpsilon&&next<right.size()
+                    while(this->pool[curSymbol.index].hasEpsilon && next<right.size()
                         &&right[next].type==Symbol::NSymbol)
                     {
                         dfs_for_NSymbol_first(right[next].index,this->NSymbolsFirsts[curSymbol.index]);

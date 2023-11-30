@@ -1,4 +1,6 @@
 #include "ItemsPool.hpp"
+#include <iostream>
+using namespace std;
 
 ItemsNode::ItemsNode(const int &index,Items &items)
 {
@@ -70,6 +72,7 @@ void ItemsPool::getDFA(SymbolPool *tpool,SymbolPool *npool)
         //     else
         //         cout<<"     "<<tpool->getString(tempItem.forward)<<endl;
         // }
+
         // NSymbol
         Items nextItems=Items(head.PPool);
         for(int j=0;j<npool->size();j++)
@@ -116,3 +119,79 @@ void ItemsPool::getDFA(SymbolPool *tpool,SymbolPool *npool)
         que.pop();
     }
 }
+/*
+0->.n1 	-1
+1->.n2 t0 n3 	-1
+1->.n3 	-1
+2->.t2 n3 	0
+2->.t1 	0
+3->.n2 	-1
+2->.t2 n3 	-1
+2->.t1 	-1
+
+I0:
+S'->• S      $
+S->• L = R      $
+S->• R      $
+L->• * R      =
+L->• i      =
+R->• L      $
+L->• * R      $
+L->• i      $
+
+I1:
+S'->S •     $
+
+I2:
+S->L • = R      $
+R->L •     $
+
+I3:
+S->R •     $
+
+I4:
+L->i •     =
+L->i •     $
+
+I5:
+L->* • R      =
+L->* • R      $
+R->• L      =
+R->• L      $
+L->• * R      =
+L->• i      =
+L->• * R      $
+L->• i      $
+
+I6:
+S->L = • R      $
+R->• L      $
+L->• * R      $
+L->• i      $
+
+I7:
+R->L •     =
+R->L •     $
+
+I8:
+L->* R •     =
+L->* R •     $
+
+I9:
+R->L •     $
+
+I10:
+S->L = R •     $
+
+I11:
+L->i •     $
+
+I12:
+L->* • R      $
+R->• L      $
+L->• * R      $
+L->• i      $
+
+I13:
+L->* R •     $
+ */

@@ -117,6 +117,25 @@ void Items::closure()
     }
 }
 
+/*
+      S' 0 S 1 L 2 R 3
+      = 0 i 1 * 2
+      (0)S' -> S (1) S -> L=R (2) S ->R
+      (3)L -> *R (4) L -> i (5) R ->L
+      insert
+      <0 [0, ( S)]>
+      <1 , [(1, L=R ), (2, R)] , endIndex=3>
+      <2 , [(3, R), (4, i)] ,endIndex=5>
+      <3 , [(5, L)] , endIndex=6>
+0->.n1 	-1
+1->.n2 t0 n3 	-1
+1->.n3 	-1
+2->.t2 n3 	0
+2->.t1 	0
+3->.n2 	-1
+2->.t2 n3 	-1
+2->.t1 	-1
+ * */
 void Items::showItems()
 {
     for(auto It:this->Its)
@@ -127,6 +146,13 @@ void Items::showItems()
             if(i==It.pos)
             {
                 printf(".");
+            }
+            //T
+            if(It.right[i].type == 1) {
+                printf("t");
+            //N
+            }else {
+                printf("n");
             }
             printf("%d ",It.right[i].index);
         }
