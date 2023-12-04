@@ -136,7 +136,7 @@ ParseStack::ParseStack(const string &path,LR1ParseTable* parseTable,SymbolPool *
     {
         this->input.push(Token(atoi(tokens[i].c_str()),atoi(tokens[i+1].c_str()),tokens[i+2],tokens[i+3],tokens[i+4]));
     }
-    input.push(Token());
+    input.push(Token()); //插入一个空 作为end判断
     this->lpDebug<<"Tokens have been read.";
     this->stateStack.push(0);
     this->symbolStack.push(Symbol());
@@ -608,7 +608,8 @@ bool ParseStack::parseAllWithRecovery(vector<vector<Recovery*>> &infos)
                 // keep current line and column
                 int curLine=curToken.line;
                 int curCol=curToken.col;
-                // claim PS reserve current parse stack and input-copy 
+                // claim PS(parse_stack) reserve current parse stack and input-copy 
+                // 草稿栈?
                 stack<int> stPS=this->stateStack;
                 stack<Symbol> symPS=this->symbolStack;
                 int curStatePS=curState;
@@ -744,6 +745,12 @@ bool ParseStack::parseAllWithRecovery(vector<vector<Recovery*>> &infos)
                 this->lpDebug<<"\t*** "+infos[i][j]->debug();
 		}
         return false;
+        /*
+            Syntax Error.
+            Repair Strategy num:1
+            --------------------------------------------------
+            *** Replace "*" with "i" on line 1 col 4
+        */
     }
     return true;
 }

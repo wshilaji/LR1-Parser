@@ -5,7 +5,7 @@ LR1ParseTable::LR1ParseTable(const int &Row,SymbolPool* NPool,SymbolPool* TPool)
     this->row=Row;
     this->npool=NPool;
     this->tpool=TPool;
-    this->acol=TPool->size()+1;
+    this->acol=TPool->size()+1; //带一个#
     this->gcol=NPool->size();
     this->ActionTable = new Action*[Row];
     this->GotoTable = new Goto*[Row];
