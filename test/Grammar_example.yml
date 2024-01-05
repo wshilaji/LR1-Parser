@@ -1,32 +1,29 @@
 Grammar:
   name: Example
-  Start-Symbol: E
+  Start-Symbol: S
   Non-Terminal-Symbols:
-    - E
-    - T
-    - F
+    - S
+    - L
+    - R
 
   # 转义字符使用 "xxx" 囊括该终结符
   Terminal-Symbols:
+   - '='
    - i
-   - "+"
-   - "*"
-   - "("
-   - ")"
+   - '*'
 
   # 如果表达式右端包含转义字符使用 "xxx .. xxx" 囊括整个右端
   Productions:
-    - left: E
+    - left: S
       rights:
-        - "E + T"
-        - T
+        - "L = R"
+        - R
 
-    - left: T
+    - left: L
       rights:
-        - "T * F"
-        - F
-
-    - left: F
-      rights:
-        - "( E )"
+        - "* R"
         - i
+
+    - left: R
+      rights:
+        - L 
