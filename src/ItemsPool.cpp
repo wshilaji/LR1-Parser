@@ -28,6 +28,7 @@ int ItemsPool::findItems(Items &items)
             return i;
         }
     }
+    //tmp暂存
     queue<pair<int,Items>> temp=this->que;
     while(!temp.empty())
     {

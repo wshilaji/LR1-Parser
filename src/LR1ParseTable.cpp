@@ -111,6 +111,7 @@ void LR1ParseTable::insertRow(const ItemsNode &node)
     {
         if(item.pos==item.right.size())
         {
+            // 归约
             if(item.forward!=-1)
             {
                 if(ActionTable[node.index][item.forward].value==0)
@@ -118,6 +119,7 @@ void LR1ParseTable::insertRow(const ItemsNode &node)
                     ActionTable[node.index][item.forward]=Action(Action::Reduce,item.prodIndex);
                 }
             }
+            // #归约
             else if(item.left!=0)
             {
                 if(ActionTable[node.index][this->acol-1].value==0)
@@ -125,6 +127,7 @@ void LR1ParseTable::insertRow(const ItemsNode &node)
                     ActionTable[node.index][this->acol-1]=Action(Action::Reduce,item.prodIndex);
                 }
             }
+            // ACC
             else
                 ActionTable[node.index][this->acol-1]=Action(Action::ACC,0);
         }
