@@ -28,6 +28,7 @@ class Items
         Items(ProductionPool *PPool);
         Items(Item &Item,ProductionPool *PPool);
         Items(Production &sp, ProductionPool *PPool,const int &forward);
+        //Items Its0 = Items(sprod, this->ProdPool, -1);
         ~Items();
         int go(const Symbol nextSymbol,Items &nextItems);
         void closure();

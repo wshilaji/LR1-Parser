@@ -196,3 +196,12 @@
 [2024/0/5	11:14:7]	LR1-Parse-Table has been worked out.
 [2024/0/5	11:14:7]	Tokens have been read.
 [2024/0/5	11:14:7]	Syntax right.
+[2024/0/8	11:21:13]	Loading Grammar...
+[2024/0/8	11:21:13]	Grammar name:Example
+[2024/0/8	11:21:13]	Non-Terminal-Symbols have been loaded.
+[2024/0/8	11:21:13]	Terminal-Symbols have been loaded.
+[2024/0/8	11:21:13]	Productions have been loaded.
+[2024/0/8	11:21:13]	First set has been found.
+[2024/0/8	11:21:13]	LR1-Parse-Table has been worked out.
+[2024/0/8	11:21:13]	Tokens have been read.
+[2024/0/8	11:21:13]	Syntax right.
